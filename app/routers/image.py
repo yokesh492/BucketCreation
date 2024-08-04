@@ -4,9 +4,10 @@ import os
 from sqlalchemy.orm import Session
 from app.database import get_db
 from app import crud, models, schemas, utils
-from app.main import UPLOAD_FOLDER
+# from app.main import UPLOAD_FOLDER
 
 router = APIRouter()
+UPLOAD_FOLDER = '/home/bucket/ONDC'
 
 @router.post("/upload_image/", response_model=schemas.FileMetadata)
 async def upload_image(file: UploadFile = File(...), folder: str = Form(""), db: Session = Depends(get_db)):
