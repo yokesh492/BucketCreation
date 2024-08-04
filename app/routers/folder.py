@@ -1,9 +1,10 @@
 from fastapi import APIRouter, Form, HTTPException
 import os
-from app.main import UPLOAD_FOLDER
+
 
 router = APIRouter()
 
+UPLOAD_FOLDER = '/home/bucket/ONDC'
 @router.post("/create_folder/")
 def create_folder(folder: str = Form(...)):
     folder_path = os.path.join(UPLOAD_FOLDER, folder)
