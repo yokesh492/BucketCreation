@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = "sqlite:///./metadata.db"
+DATABASE_URL = "postgresql://yoke492:Pokemon492#@91.108.104.64:5432/VizdaleBucket"       #"sqlite:///./metadata.db"
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
